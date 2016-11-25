@@ -11,13 +11,35 @@ import Database.Persist.Postgresql
 
 data App = App {connPool :: ConnectionPool }
 
+
 share [mkPersist sqlSettings, mkMigrate "migrateAll"] [persistLowerCase|
+Locais               json
+    nome             Text
+    localizacao      Text
+    descricao        Text
+
+Tipos_Usuarios       json
+    descricao        Text
     
-Usuarios json
-    nome         Text
-    rg           Text
-    senha        Text
-    email        Text
+Usuarios             json
+    nome             Text
+    rg               Text
+    senha            Text
+    email            Text
+    fk_tipo          Tipos_UsuariosId
+    
+Produtos             json
+    nome             Text
+    descricao        Text
+    preco            Double
+    fk_local         LocaisId
+    
+Reservas             json
+    fk_usuario       UsuariosId
+    
+Reservas_Produtos    json
+    fk_reserva       ReservasId
+    fk_produto       ProdutosId
 
 |]
 
