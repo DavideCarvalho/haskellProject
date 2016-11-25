@@ -18,7 +18,7 @@ Locais               json
     localizacao      Text
     descricao        Text
 
-Tipos_Usuarios       json
+TiposUsuarios       json
     descricao        Text
     
 Usuarios             json
@@ -26,7 +26,9 @@ Usuarios             json
     rg               Text
     senha            Text
     email            Text
-    fk_tipo          Tipos_UsuariosId
+    fk_tipo          TiposUsuariosId
+    UniqueRg rg
+    UniqueEmail email
     
 Produtos             json
     nome             Text
@@ -37,9 +39,10 @@ Produtos             json
 Reservas             json
     fk_usuario       UsuariosId
     
-Reservas_Produtos    json
+ReservasProdutos    json
     fk_reserva       ReservasId
     fk_produto       ProdutosId
+    UniqueReservasProdutos fk_reserva fk_produto
 
 |]
 

@@ -8,6 +8,9 @@ module Application where
 import Foundation
 import Yesod.Core
 
+import Usuarios
+import Locais
+
 import Add
 import Home
 
