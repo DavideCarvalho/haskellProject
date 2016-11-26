@@ -15,5 +15,7 @@ postProdutosR = do
     
 getListProdutosR :: Handler Html
 getListProdutosR = do
+    addHeader "Access-Control-Allow-Origin" "*"
+    addHeader "Access-Control-Allow-Methods" "GET, OPTIONS"
     produtos <- runDB $ selectList [] [Asc ProdutosNome]
     sendResponse (object [pack "resp" .= toJSON produtos])

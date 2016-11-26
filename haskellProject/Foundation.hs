@@ -70,9 +70,6 @@ instance YesodPersist App where
        master <- getYesod
        let pool = connPool master
        runSqlPool f pool
-       logWare <- makeLogWare foundation
-       appPlain <- toWaiAppPlain foundation
-       return $ logWare $ defaultMiddlewaresNoLogging $ simpleCors appPlain
        
        
        
