@@ -3,9 +3,9 @@
     <h3>Sistema de lanchonetes Centro Paula Souza</h3>
   </div>
   <div class="container" ng-init="lanchonetes=true">
-    <ul class="links">
-      <li ng-click="lanchonetes=true" ng-class="{bold:lanchonetes===true}">Lanchonetes</li>
-      <li ng-click="lanchonetes=false" ng-class="{bold:lanchonetes===false}">Produtos</li>
+    <ul class="tabs">
+      <li class="tab" ng-click="lanchonetes=true" ng-class="{active:lanchonetes===true}"><a>Lanchonetes</a></li>
+      <li class="tab" ng-click="lanchonetes=false" ng-class="{active:lanchonetes===false}"><a>Produtos</a></li>
     </ul>
   </div>
   <div class="container" ng-show="lanchonetes===false">

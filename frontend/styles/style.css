@@ -5,12 +5,11 @@
   text-align: center;
 }
 
-.links li{
-  float: left;
-  width: 50%;
-  cursor: pointer;
+.tabs .indicator {
+  background-color: #90caf9;
 }
 
-.bold{
-  font-weight: bold;
+.tabs a{
+  cursor: pointer;
+  color:#90caf9;
 }
