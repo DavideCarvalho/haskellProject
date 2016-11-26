@@ -11,7 +11,6 @@ import Database.Persist.Postgresql
 
 data App = App {connPool :: ConnectionPool }
 
-
 share [mkPersist sqlSettings, mkMigrate "migrateAll"] [persistLowerCase|
 Locais               json
     nome             Text
@@ -48,7 +47,22 @@ ReservasProdutos    json
 
 mkYesodData "App" $(parseRoutesFile "routes")
 
-instance Yesod App
+instance Yesod App where
+    authRoute _ = Just LoginR
+    
+    ---- TEMPORARIO
+    isAuthorized LoginR _ = return Authorized
+    isAuthorized ListProdutosR _ = return Authorized
+    isAuthorized ProdutosR _ = return Authorized
+    isAuthorized ListLocaisR _ = return Authorized
+    isAuthorized LocaisR _ = return Authorized
+    isAuthorized ListTiposUsuariosR _ = return Authorized
+    isAuthorized TiposUsuariosR _ = return Authorized
+    isAuthorized ListUsuariosR _ = return Authorized
+    isAuthorized UsuariosR _ = return Authorized
+    isAuthorized ListReservasR _ = return Authorized
+    isAuthorized ReservasR _ = return Authorized
+    
 
 instance YesodPersist App where
    type YesodPersistBackend App = SqlBackend
