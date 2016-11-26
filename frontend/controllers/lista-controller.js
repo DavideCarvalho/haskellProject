@@ -7,11 +7,25 @@ function ListaController($http){
 
   vm.listaLanchonetes = [];
 
+  vm.listaProdutos = [
+  ];
+
   vm.carregarLanchonetes = carregarLanchonetes;
   function carregarLanchonetes(){
-    $http.get('https://haskell-web-rinama07.c9users.io/locais/lista')
+    $http.get('https://websitehaskell-davicarvalho.c9users.io/locais/lista')
     .success(function(data){
-      vm.listaLanchonetes = data;
+      vm.listaLanchonetes = data.resp;
+    })
+    .error(function(error){
+      console.log(error);
+    });
+  }
+
+  vm.carregarProdutos = carregarProdutos;
+  function carregarProdutos(){
+    $http.get('https://websitehaskell-davicarvalho.c9users.io/produtos/lista')
+    .success(function(data){
+      vm.listaProdutos = data.resp;
     })
     .error(function(error){
       console.log(error);
@@ -19,5 +33,6 @@ function ListaController($http){
   }
 
   carregarLanchonetes();
+  carregarProdutos();
 
 }

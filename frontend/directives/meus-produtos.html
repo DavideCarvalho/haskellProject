@@ -7,10 +7,10 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Teste</td>
-      <td>Teste</td>
-      <td>Teste</td>
+    <tr ng-repeat = "produto in lista.listaProdutos">
+      <td>{{produto.nome}}</td>
+      <td>{{produto.fk_local}}</td>
+      <td>R{{produto.preco | currency}}</td>
     </tr>
   </tbody>
 </table>

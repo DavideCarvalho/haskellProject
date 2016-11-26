@@ -7,6 +7,10 @@ angular.module('webapp',['MinhasDiretivas','ngRoute'])
     templateUrl:'views/listaLanchonetesProdutos.html',
     controller:'ListaController as lista'
   })
+  .when('/login',{
+    templateUrl:'views/login.html',
+    controller:'LoginController as login'
+  })
   .otherwise({
     redirectTo:'/'
   });
