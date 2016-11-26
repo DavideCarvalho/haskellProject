@@ -7,40 +7,41 @@ module Foundation where
 import Yesod
 import Data.Text
 import Database.Persist.Postgresql
-    ( ConnectionPool, SqlBackend, runSqlPool)
+    (ConnectionPool, SqlBackend, runSqlPool)
 
-data App = App {connPool :: ConnectionPool }
+data App = App {connPool :: ConnectionPool}
 
 share [mkPersist sqlSettings, mkMigrate "migrateAll"] [persistLowerCase|
-Locais               json
-    nome             Text
-    localizacao      Text
-    descricao        Text
+Locais                  json
+    nome                Text
+    localizacao         Text
+    descricao           Text
 
-TiposUsuarios       json
-    descricao        Text
+TiposUsuarios           json
+    descricao           Text
     
-Usuarios             json
-    nome             Text
-    rg               Text
-    senha            Text
-    email            Text
-    fk_tipo          TiposUsuariosId
+Usuarios                json
+    nome                Text
+    rg                  Text
+    senha               Text
+    email               Text
+    fk_tipo             TiposUsuariosId
     UniqueRg rg
     UniqueEmail email
     
-Produtos             json
-    nome             Text
-    descricao        Text
-    preco            Double
-    fk_local         LocaisId
+Produtos                json
+    nome                Text
+    descricao           Text
+    preco               Double
+    fk_local            LocaisId
     
-Reservas             json
-    fk_usuario       UsuariosId
+Reservas                json
+    fk_usuario          UsuariosId
+    ic_atendido         Bool
     
-ReservasProdutos    json
-    fk_reserva       ReservasId
-    fk_produto       ProdutosId
+ReservasProdutos        json
+    fk_reserva          ReservasId
+    fk_produto          ProdutosId
     UniqueReservasProdutos fk_reserva fk_produto
 
 |]
@@ -63,15 +64,12 @@ instance Yesod App where
     isAuthorized ListReservasR _ = return Authorized
     isAuthorized ReservasR _ = return Authorized
     
-
 instance YesodPersist App where
    type YesodPersistBackend App = SqlBackend
    runDB f = do
        master <- getYesod
        let pool = connPool master
        runSqlPool f pool
-       
-       
        
 type Form a = Html -> MForm Handler (FormResult a, Widget)
 
