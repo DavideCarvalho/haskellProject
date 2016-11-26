@@ -8,4 +8,9 @@
 .links li{
   float: left;
   width: 50%;
+  cursor: pointer;
+}
+
+.bold{
+  font-weight: bold;
 }

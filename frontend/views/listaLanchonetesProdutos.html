@@ -1,0 +1,18 @@
+  <minha-nav></minha-nav>
+  <div class="container">
+    <h3>Sistema de lanchonetes Centro Paula Souza</h3>
+  </div>
+  <div class="container" ng-init="lanchonetes=true">
+    <ul class="links">
+      <li ng-click="lanchonetes=true" ng-class="{bold:lanchonetes===true}">Lanchonetes</li>
+      <li ng-click="lanchonetes=false" ng-class="{bold:lanchonetes===false}">Produtos</li>
+    </ul>
+  </div>
+  <div class="container" ng-show="lanchonetes===false">
+    <meus-produtos></meus-produtos>
+  </div>
+  <div class="container" ng-show="lanchonetes===true">
+    <minhas-lanchonetes></minhas-lanchonetes>
+  </div>
+  
+

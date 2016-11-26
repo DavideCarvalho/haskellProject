@@ -1,32 +1,22 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="webapp">
-  <head>
-    <meta charset="UTF-8">
-    <base href="/">
-    <title>WebApp</title>
-    <link rel="stylesheet" href="libs/materialize/bin/materialize.css">
-    <link rel="stylesheet" href="styles/style.css">
-  </head>
-  <body>
-    <nav>
-      <div class="nav-wrapper blue lighten-1">
-        <a href="#" class="brand-logo">Logo</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="sass.html">Entrar</a></li>
-        </ul>
-      </div>
-    </nav>
-    <div class="container">
-      <h3>Sistema de lanchonetes Centro Paula Souza</h3>
-    </div>
-    <ng-view></ng-view>
-    <script src="libs/angular/angular.min.js"></script>
-    <script src="libs/angular-route/angular-route.min.js"></script>
-    <script src="main.js"></script>
-    <script src="controllers/lista-controller.js"></script>
-    <script src="controllers/produtos-controller.js"></script>
-    <script src="controllers/cadastro-lanchonete-controller.js"></script>
-    <script src="libs/jquery/dist/jquery.min.js"></script>
-    <script src="libs/materialize/bin/materialize.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <base href="/">
+  <title>WebApp</title>
+  <link rel="stylesheet" href="libs/materialize/bin/materialize.css">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <ng-view></ng-view>
+  <script src="libs/angular/angular.min.js"></script>
+  <script src="libs/angular-route/angular-route.min.js"></script>
+  <script src="main.js"></script>
+  <script src="controllers/lista-controller.js"></script>
+  <script src="controllers/produtos-controller.js"></script>
+  <script src="controllers/cadastro-lanchonete-controller.js"></script>
+  <script src="directives/minhas-diretivas.js"></script>
+  <script src="libs/jquery/dist/jquery.min.js"></script>
+  <script src="libs/materialize/bin/materialize.js"></script>
+</body>
 </html>
