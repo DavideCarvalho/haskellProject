@@ -25,5 +25,6 @@ executable          haskellProject
                 , persistent-postgresql
                 , aeson
                 , monad-logger
+                , wai-cors
                 
   ghc-options:    -threaded -O2 -rtsopts -with-rtsopts=-N

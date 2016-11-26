@@ -7,6 +7,7 @@ module Application where
 
 import Foundation
 import Yesod
+import Network.Wai.Middleware.Cors
 
 import Handlers.Usuarios
 import Handlers.Locais
