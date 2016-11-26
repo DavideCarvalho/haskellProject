@@ -1,2 +1,15 @@
-/              HomeR GET
-/add/#Int/#Int AddR  GET
+/                           LoginR                      POST
+/locais/lista               ListLocaisR                 GET
+/locais/cadastro            LocaisR                     POST
+
+/produtos/lista             ListProdutosR               GET
+/produtos/cadastro          ProdutosR                   POST
+
+/tiposusuario/lista         ListTiposUsuariosR          GET
+/tiposusuario/cadastro      TiposUsuariosR              POST
+
+/usuarios/lista              ListUsuariosR              GET
+/usuarios/cadastro           UsuariosR                  POST
+
+/reservas/lista              ListReservasR              GET
+/reservas/cadastro           ReservasR                  POST

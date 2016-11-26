@@ -6,12 +6,13 @@
 module Application where
 
 import Foundation
-import Yesod.Core
+import Yesod
 
-import Usuarios
-import Locais
-
-import Add
-import Home
+import Handlers.Usuarios
+import Handlers.Locais
+import Handlers.Produtos
+import Handlers.TiposUsuarios
+import Handlers.Login
+import Handlers.Reservas
 
 mkYesodDispatch "App" resourcesApp

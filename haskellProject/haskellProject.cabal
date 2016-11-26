@@ -8,9 +8,12 @@ executable          haskellProject
   main-is:          Main.hs
   other-modules:    Application
                     Foundation
-                    
-                    Add
-                    Home
+                    Handlers.Login
+                    Handlers.Locais
+                    Handlers.Produtos
+                    Handlers.TiposUsuarios
+                    Handlers.Usuarios
+                    Handlers.Reservas
 
   ghc-options:      -Wall -fwarn-tabs -O2
 
