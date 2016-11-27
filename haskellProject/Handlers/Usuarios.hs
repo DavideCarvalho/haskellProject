@@ -7,13 +7,19 @@ import Yesod
 import Database.Persist.Postgresql
 import Data.Text
 
-postUsuariosR :: Handler ()
-postUsuariosR = do
+postInsertUsuariosR :: Handler ()
+postInsertUsuariosR = do
     usuario <- requireJsonBody :: Handler Usuarios
     uid <- runDB $ insert usuario
     sendResponse (object [pack "resp" .= pack ("CREATED " ++ (show $ fromSqlKey uid))])
     
-getListUsuariosR :: Handler Html
+getListUsuariosR :: Handler ()
 getListUsuariosR = do
     usuario <- runDB $ selectList [] [Asc UsuariosNome]
     sendResponse (object [pack "resp" .= toJSON usuario])
+
+putUpdateUsuariosR :: Handler ()
+putUpdateUsuariosR = do
+    usuario <- requireJsonBody :: Handler Usuarios
+    uid <- runDB $ insert usuario
+    sendResponse (object [pack "resp" .= pack ("UPDATED " ++ (show $ fromSqlKey uid))])
