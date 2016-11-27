@@ -15,6 +15,4 @@ import Handlers.TiposUsuarios
 import Handlers.Login
 import Handlers.Reservas
 
-import Database.Persist.Postgresql
-
 mkYesodDispatch "App" resourcesApp

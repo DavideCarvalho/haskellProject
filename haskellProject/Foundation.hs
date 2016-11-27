@@ -42,7 +42,6 @@ Reservas                json
 ReservasProdutos        json
     fk_reserva          ReservasId
     fk_produto          ProdutosId
-    qt_produto          Int
     UniqueReservasProdutos fk_reserva fk_produto
 
 |]
@@ -54,16 +53,17 @@ instance Yesod App where
     
     ---- TEMPORARIO
     isAuthorized LoginR _ = return Authorized
-    isAuthorized InsertUsuariosR _ = return Authorized
-    isAuthorized _ _ = estaAutenticado
-
-estaAutenticado :: Handler AuthResult
-estaAutenticado = do
-   msu <- lookupSession "_ID"
-   case msu of
-       Just _ -> return Authorized
-       Nothing -> return AuthenticationRequired
-  
+    isAuthorized ListProdutosR _ = return Authorized
+    isAuthorized ProdutosR _ = return Authorized
+    isAuthorized ListLocaisR _ = return Authorized
+    isAuthorized LocaisR _ = return Authorized
+    isAuthorized ListTiposUsuariosR _ = return Authorized
+    isAuthorized TiposUsuariosR _ = return Authorized
+    isAuthorized ListUsuariosR _ = return Authorized
+    isAuthorized UsuariosR _ = return Authorized
+    isAuthorized ListReservasR _ = return Authorized
+    isAuthorized ReservasR _ = return Authorized
+    
 instance YesodPersist App where
    type YesodPersistBackend App = SqlBackend
    runDB f = do
