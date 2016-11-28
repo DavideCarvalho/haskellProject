@@ -20,6 +20,7 @@ executable          haskellProject
   build-depends:  base
                 , yesod
                 , yesod-core
+                , yesod-auth
                 , text                          
                 , persistent                    
                 , persistent-postgresql

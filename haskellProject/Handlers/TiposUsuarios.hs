@@ -7,8 +7,8 @@ import Yesod
 import Database.Persist.Postgresql
 import Data.Text
 
-postTiposUsuariosR :: Handler ()
-postTiposUsuariosR = do
+postInsertTiposUsuariosR :: Handler ()
+postInsertTiposUsuariosR = do
     tiposuario <- requireJsonBody :: Handler TiposUsuarios
     uid <- runDB $ insert tiposuario
     sendResponse (object [pack "resp" .= pack ("CREATED " ++ (show $ fromSqlKey uid))])
@@ -17,3 +17,9 @@ getListTiposUsuariosR :: Handler Html
 getListTiposUsuariosR = do
     tiposuario <- runDB $ selectList [] [Asc TiposUsuariosDescricao]
     sendResponse (object [pack "resp" .= toJSON tiposuario])
+    
+putUpdateTiposUsuariosR :: Handler ()
+putUpdateTiposUsuariosR = do
+    tiposuario <- requireJsonBody :: Handler TiposUsuarios
+    uid <- runDB $ insert tiposuario
+    sendResponse (object [pack "resp" .= pack ("UPDATED " ++ (show $ fromSqlKey uid))])

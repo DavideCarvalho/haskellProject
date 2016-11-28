@@ -1,11 +1,22 @@
 /                               LoginR                    POST
+/logout                         LogoutR                   POST
+
 /locais/lista                   ListLocaisR               GET
-/locais/cadastro                LocaisR                   POST
+/locais/cadastro                InsertLocaisR             POST
+/locais/atualizacao             UpdateLocaisR             PUT
+
 /produtos/lista                 ListProdutosR             GET
-/produtos/cadastro              ProdutosR                 POST
+/produtos/cadastro              InsertProdutosR           POST
+/produtos/atualizacao           UpdateProdutosR           PUT
+
 /tiposusuario/lista             ListTiposUsuariosR        GET
-/tiposusuario/cadastro          TiposUsuariosR            POST
+/tiposusuario/cadastro          InsertTiposUsuariosR      POST
+/tiposusuario/atualizacao       UpdateTiposUsuariosR      PUT
+
 /usuarios/lista                 ListUsuariosR             GET
-/usuarios/cadastro              UsuariosR                 POST
+/usuarios/cadastro              InsertUsuariosR           POST
+/usuarios/atualizacao           UpdateUsuariosR           PUT
+
 /reservas/lista                 ListReservasR             GET
-/reservas/cadastro              ReservasR                 POST
+/reservas/cadastro              InsertReservasR           POST
+/reservas/atualizacao           UpdateReservasR           PUT
