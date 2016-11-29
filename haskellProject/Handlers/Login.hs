@@ -16,3 +16,6 @@ postLogoutR:: Handler ()
 postLogoutR = do
     deleteSession "_ID"
     sendResponse (object [pack "resp" .= pack ("SUCESSFULL")])
+    
+    
+    

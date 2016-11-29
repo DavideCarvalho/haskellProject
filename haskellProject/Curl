@@ -1,18 +1,15 @@
+Listagens
+curl -v -X GET "https://haskell-web-rinama07.c9users.io/locais/lista" 
+curl -v -X GET "https://haskell-web-rinama07.c9users.io/produtos/lista" 
+curl -v -X GET "https://haskell-web-rinama07.c9users.io/tiposusuario/lista" 
+curl -v -X GET "https://haskell-web-rinama07.c9users.io/usuarios/lista" 
+curl -v -X GET "https://haskell-web-rinama07.c9users.io/reservas/lista" 
+curl -v -X GET "https://haskell-web-rinama07.c9users.io/reservasprodutos/lista/1" 
 
-Local
-curl -v -X POST "https://haskell-web-davicarvalho.c9users.io/locais/cadastro" -d '{"id": 10,"nome":"Lanchonete da ETEC","localizacao":"Próxima a biblioteca da ETEC Aristóteles Ferreira","descricao":"Lanchonete com diversos tipos de salgados e bebidas, também servem almoço."}'
-
-Produto
-curl -v -X POST "https://haskell-web-davicarvalho.c9users.io/produtos/cadastro" -d '{"nome":"Pão","descricao":"É um pão","preco":4.20,"local":1}'
-
-TiposUsuarios
-curl -v -X POST "https://haskell-web-davicarvalho.c9users.io/tiposusuario/cadastro" -d '{"descricao":"Usuário da Lanchonete ETEC","id":10}'
-
-Usuario
-curl -v -X POST "https://haskell-web-davicarvalho.c9users.io/usuarios/cadastro" -d '{"nome":"Alex","rg":"462689694","senha":"senha123","email":"alex@mail.com","tipo":1,"id":10}'
-
-Reserva
-curl -v -X POST "https://haskell-web-wibbly.c9users.io/reservas/cadastro" -d '{"usuario":2,"atendido":false}'
-
-
-
+Cadastros
+curl -v -X POST "https://haskell-web-rinama07.c9users.io/locais/cadastro" -d '{"nome":"Lanchonete da ETEC Aristoteles Ferreira","localizacao":"Próxima a biblioteca da ETEC Aristóteles Ferreira","descricao":"Lanchonete com diversos tipos de salgados e bebidas, também servem almoço."}'
+curl -v -X POST "https://haskell-web-rinama07.c9users.io/produtos/cadastro" -d '{"nome":"Almoço - frango","descricao":"Arroz, Feijão, Batata frita e frango","preco":3.50,"local":20}'
+curl -v -X POST "https://haskell-web-rinama07.c9users.io/tiposusuario/cadastro" -d '{"descricao":"Gestor"}'
+curl -v -X POST "https://haskell-web-rinama07.c9users.io/usuarios/cadastro" -d '{"nome":"Marina","rg":"111111111","senha":"senha123","email":"marina@mail.com","tipo":1}'
+curl -v -X POST "https://haskell-web-rinama07.c9users.io/reservas/cadastro" -d '{"usuario":2,"atendido":true}'
+curl -v -X POST "https://haskell-web-rinama07.c9users.io/reservasprodutos/cadastro" -d '{"reserva":2,"produto":1,"quantidadeproduto":2}'

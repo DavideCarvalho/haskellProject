@@ -14,6 +14,7 @@ executable          haskellProject
                     Handlers.TiposUsuarios
                     Handlers.Usuarios
                     Handlers.Reservas
+                    Handlers.ReservasProdutos
 
   ghc-options:      -Wall -fwarn-tabs -O2
 

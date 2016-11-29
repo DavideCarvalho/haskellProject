@@ -15,5 +15,6 @@ import Handlers.Produtos
 import Handlers.TiposUsuarios
 import Handlers.Login
 import Handlers.Reservas
+import Handlers.ReservasProdutos
 
 mkYesodDispatch "App" resourcesApp

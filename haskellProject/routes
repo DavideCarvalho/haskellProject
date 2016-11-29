@@ -39,3 +39,7 @@
 /reservas/cadastro                          InsertReservasR           POST
 -- ROTA DE ATUALIZAÇÃO DE RESERVAS
 /reservas/atualizacao/#ReservasId           UpdateReservasR           PUT
+-- ROTA DE LISTAGEM DE PRODUTOS POR RESERVA
+/reservasprodutos/lista/#ReservasId         ListReservasProdutosR     GET
+-- ROTA DE CADASTRO DE PRODUTO NA RESERVA
+/reservasprodutos/cadastro                  InsertReservasProdutosR   POST
