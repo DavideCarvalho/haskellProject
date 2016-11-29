@@ -1,22 +1,39 @@
+-- ROTA DE LOGIN
 /                                           LoginR                    POST
+-- ROTA DE LOGOUT
 /logout                                     LogoutR                   POST
 
+-- ROTA DE LISTAGEM DE LOCAIS
 /locais/lista                               ListLocaisR               GET
+-- ROTA DE CADASTRO DE LOCAIS
 /locais/cadastro                            InsertLocaisR             POST
+-- ROTA DE ATUALIZAÇÃO DE LOCAIS
 /locais/atualizacao/#LocaisId               UpdateLocaisR             PUT
 
+-- ROTA DE LISTAGEM DE PRODUTOS
 /produtos/lista                             ListProdutosR             GET
+-- ROTA DE CADASTRO DE PRODUTOS
 /produtos/cadastro                          InsertProdutosR           POST
+-- ROTA DE ATUALIZAÇÃO DE PRODUTOS
 /produtos/atualizacao/#ProdutosId           UpdateProdutosR           PUT
 
+-- ROTA DE LISTAGEM DE TIPOS DE USUARIO
 /tiposusuario/lista                         ListTiposUsuariosR        GET
+-- ROTA DE CADASTRO DE TIPOS DE USUARIO
 /tiposusuario/cadastro                      InsertTiposUsuariosR      POST
+-- ROTA DE ATUALIZAÇÃO DE TIPOS DE USUARIO
 /tiposusuario/atualizacao/#TiposUsuariosId  UpdateTiposUsuariosR      PUT
 
+-- ROTA DE LISTAGEM DE USUARIOS
 /usuarios/lista                             ListUsuariosR             GET
+-- ROTA DE CADASTRO DE USUARIOS
 /usuarios/cadastro                          InsertUsuariosR           POST
+-- ROTA DE ATUALIZAÇÃO DE USUARIOS
 /usuarios/atualizacao/#UsuariosId           UpdateUsuariosR           PUT
 
+-- ROTA DE LISTAGEM DE RESERVAS
 /reservas/lista                             ListReservasR             GET
+-- ROTA DE CADASTRO DE RESERVAS
 /reservas/cadastro                          InsertReservasR           POST
+-- ROTA DE ATUALIZAÇÃO DE RESERVAS
 /reservas/atualizacao/#ReservasId           UpdateReservasR           PUT

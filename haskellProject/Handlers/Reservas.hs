@@ -14,8 +14,10 @@ postInsertReservasR = do
     sendResponse (object [pack "resp" .= pack ("CREATED " ++ (show $ fromSqlKey rid))])
     
 getListReservasR :: Handler Html
-getListReservasR = undefined
--- tratar o ReservasProdutos aqui também
+getListReservasR = do
+    reservas <- runDB $ selectList [] [Asc ReservasId]
+    sendResponse (object [pack "resp" .= toJSON reservas])
+
 
 putUpdateReservasR :: ReservasId -> Handler ()
 putUpdateReservasR rid = do
