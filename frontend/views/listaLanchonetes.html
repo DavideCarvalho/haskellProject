@@ -1,20 +1,6 @@
-<div class="container">
-  <ul class="links">
-    <li><a href="/lista">Lanchonetes</a></li>
-    <li><a href="/produtos">Produtos</a></li>
-  </ul>
-  <table>
-    <thead>
-      <tr>
-        <th>Nome</th>
-        <th>Localização</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="lanchonete in lista.listaLanchonetes">
-        <td><a href="http://www.google.com.br">{{lanchonete.nome}}</a></td>
-        <td>{{lanchonete.localizacao}}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+  <minha-nav></minha-nav>
+  <div class="container">
+    <h3>Sistema de lanchonetes Centro Paula Souza</h3>
+    <h5>Lanchonetes</h5>
+    <minhas-lanchonetes></minhas-lanchonetes>
+  </div>

@@ -1,38 +1,29 @@
 angular.module('webapp')
-.controller('ListaController',ListaController);
+.controller('ListaLanchonetesController',ListaController);
 
 function ListaController($http){
   vm = this;
   vm.mensagem = "teste";
 
-  vm.listaLanchonetes = [];
+  //Lista contendo o produto, a descrição,a lanchonete e o preço
+  vm.lista = [];
 
-  vm.listaProdutos = [
-  ];
-
-  vm.carregarLanchonetes = carregarLanchonetes;
-  function carregarLanchonetes(){
-    $http.get('https://websitehaskell-davicarvalho.c9users.io/locais/lista')
+  vm.carregarLista = carregarLista;
+  function carregarLista(){
+    $http.get('https://websitehaskell-davicarvalho.c9users.io:8082/locais/lista')
     .success(function(data){
-      vm.listaLanchonetes = data.resp;
+      vm.lista=data.resp;
     })
     .error(function(error){
       console.log(error);
     });
   }
 
-  vm.carregarProdutos = carregarProdutos;
-  function carregarProdutos(){
-    $http.get('https://websitehaskell-davicarvalho.c9users.io/produtos/lista')
-    .success(function(data){
-      vm.listaProdutos = data.resp;
-    })
-    .error(function(error){
-      console.log(error);
-    });
+  vm.excluirLanchonete = excluirLanchonete;
+  function excluirLanchonete(LanchoneteId){
+
   }
 
-  carregarLanchonetes();
-  carregarProdutos();
+  carregarLista();
 
 }

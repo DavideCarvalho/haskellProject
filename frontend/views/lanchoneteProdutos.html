@@ -1,0 +1,17 @@
+<minha-nav></minha-nav>
+<div class="container">
+    <h5>Lanchonete {{ lanchoneteprodutos.lanchoneteId}}</h5>
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Preco</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="produto in lanchoneteprodutos.produtos">
+                <td>{{produto.nome}}</td>
+                <td>{{produto.preco}}</td>
+            </tr>
+        </tbody>
+    </table>

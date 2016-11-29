@@ -10,10 +10,4 @@ angular.module('MinhasDiretivas',[])
   ddo.restrict="AE";
   ddo.templateUrl = 'directives/minhas-lanchonetes.html';
   return ddo;
-})
-.directive('meusProdutos',function(){
-  var ddo = {};
-  ddo.restrict="AE";
-  ddo.templateUrl = 'directives/meus-produtos.html';
-  return ddo;
 });

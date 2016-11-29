@@ -1,0 +1,25 @@
+<minha-nav></minha-nav>
+<div class="container">
+  <h5>Adicionar Produto</h5>
+  <form name="formProdutoAdd" ng-submit="produtoadd.adicionarProduto(novoproduto)">
+    <div class="row">
+      <div class="input-field col s12">
+        <input ng-model="novoproduto.nome" id="first_name" type="text" class="validate">
+        <label for="first_name" class="left-align">Nome</label>
+      </div>
+      <div class="input-field col s12">        
+        <textarea ng-model="novoproduto.descricao" id="textarea1" class="materialize-textarea"></textarea>
+        <label for="textarea1">Descrição</label>
+      </div>
+      <div class="input-field col s12">
+        <input ng-model="novoproduto.preco" id="preco" type="number" class="validate">
+        <label for="preco" class="left-align">Preço</label>
+      </div>
+      <div class="input-field col s12">
+        <input ng-model="novoproduto.fk_local" id="last_name" type="number" class="validate">
+        <label for="local" class="left-align">Local</label>
+      </div>
+    </div>
+    <button type="submit" class="waves-effect waves-light btn-large">Adicionar</button>
+  </form>
+</div>
