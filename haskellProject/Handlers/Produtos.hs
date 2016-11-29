@@ -23,8 +23,8 @@ getListProdutosR = do
 putUpdateProdutosR :: ProdutosId -> Handler ()
 putUpdateProdutosR pid = do
     produto <- requireJsonBody :: Handler Produtos
-	runDB $ update pid [ProdutosNome        =. (produtosNome produto)
-	                  , ProdutosDescricao   =. (produtosDescricao produto)
-	                  , ProdutosPreco       =. (produtosPreco produto)
-	                  , ProdutosLocal       =. (produtosLocal produto)]
-	sendResponse (object [pack "resp" .= pack "UPDATED"])
+    runDB $ update pid [ProdutosNome        =. (produtosNome produto)
+                      , ProdutosDescricao   =. (produtosDescricao produto)
+                      , ProdutosPreco       =. (produtosPreco produto)
+                      , ProdutosLocal       =. (produtosLocal produto)]
+    sendResponse (object [pack "resp" .= pack "UPDATED"])

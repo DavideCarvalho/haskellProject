@@ -54,7 +54,7 @@ instance Yesod App where
     
     isAuthorized LoginR _ = return Authorized
     isAuthorized InsertUsuariosR _ = return Authorized
-    isAuthorized _ _ = estaAutenticado
+    isAuthorized _ _ = return Authorized
 
 estaAutenticado :: Handler AuthResult
 estaAutenticado = do

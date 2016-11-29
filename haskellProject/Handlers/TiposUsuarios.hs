@@ -21,5 +21,5 @@ getListTiposUsuariosR = do
 putUpdateTiposUsuariosR :: TiposUsuariosId -> Handler ()
 putUpdateTiposUsuariosR tid = do
     tipo <- requireJsonBody :: Handler TiposUsuarios
-	runDB $ update tid [TiposUsuariosDescricao =. (tiposuariosDescricao tipo)]
-	sendResponse (object [pack "resp" .= pack "UPDATED"])
+    runDB $ update tid [TiposUsuariosDescricao =. (tiposUsuariosDescricao tipo)]
+    sendResponse (object [pack "resp" .= pack "UPDATED"])
