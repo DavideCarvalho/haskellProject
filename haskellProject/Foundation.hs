@@ -25,7 +25,7 @@ Usuarios                json
     rg                  Text
     senha               Text
     email               Text
-    fk_tipo             TiposUsuariosId
+    tipo                TiposUsuariosId
     UniqueRg rg
     UniqueEmail email
     
@@ -33,17 +33,17 @@ Produtos                json
     nome                Text
     descricao           Text
     preco               Double
-    fk_local            LocaisId
+    local               LocaisId
     
 Reservas                json
-    fk_usuario          UsuariosId
-    ic_atendido         Bool
+    usuario             UsuariosId
+    atendido            Bool
     
 ReservasProdutos        json
-    fk_reserva          ReservasId
-    fk_produto          ProdutosId
-    qt_produto          Int
-    UniqueReservasProdutos fk_reserva fk_produto
+    reserva             ReservasId
+    produto             ProdutosId
+    quantidadeproduto   Int
+    UniqueReservasProdutos reserva produto
 
 |]
 

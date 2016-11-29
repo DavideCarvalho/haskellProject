@@ -15,11 +15,11 @@ postInsertReservasR = do
     
 getListReservasR :: Handler Html
 getListReservasR = undefined
-
-putUpdateReservasR :: Handler ()
-putUpdateReservasR = do
-    reserva <- requireJsonBody :: Handler Reservas
-    rid <- runDB $ insert reserva
-    sendResponse (object [pack "resp" .= pack ("UPDATED " ++ (show $ fromSqlKey rid))])
-
 -- tratar o ReservasProdutos aqui também
+
+putUpdateReservasR :: ReservasId -> Handler ()
+putUpdateReservasR rid = do
+    reserva <- requireJsonBody :: Handler Reservas
+    runDB $ update rid [ReservasUsuario     =. (reservasUsuario reserva)
+                      , ReservasAtendido    =. (reservasAtendido reserva)]
+    sendResponse (object [pack "resp" .= pack "UPDATED"])

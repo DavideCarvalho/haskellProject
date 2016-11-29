@@ -20,8 +20,11 @@ getListProdutosR = do
     produtos <- runDB $ selectList [] [Asc ProdutosNome]
     sendResponse (object [pack "resp" .= toJSON produtos])
     
-putUpdateProdutosR :: Handler ()
-putUpdateProdutosR = do
+putUpdateProdutosR :: ProdutosId -> Handler ()
+putUpdateProdutosR pid = do
     produto <- requireJsonBody :: Handler Produtos
-    pid <- runDB $ insert produto
-    sendResponse (object [pack "resp" .= pack ("UPDATED " ++ (show $ fromSqlKey pid))])
+	runDB $ update pid [ProdutosNome        =. (produtosNome produto)
+	                  , ProdutosDescricao   =. (produtosDescricao produto)
+	                  , ProdutosPreco       =. (produtosPreco produto)
+	                  , ProdutosLocal       =. (produtosLocal produto)]
+	sendResponse (object [pack "resp" .= pack "UPDATED"])

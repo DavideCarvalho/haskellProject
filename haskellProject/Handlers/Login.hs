@@ -9,6 +9,9 @@ import Database.Persist.Postgresql
 
 postLoginR :: Handler ()
 postLoginR = undefined
+-- do usuario <- requireJsonBody :: Handler Usuarios pegar 'atributo' por 'atributo'
 
 postLogoutR:: Handler ()
-postLogoutR = undefined
+postLogoutR = do
+    deleteSession "_ID"
+    sendResponse (object [pack "resp" .= pack ("SUCESSFULL")])

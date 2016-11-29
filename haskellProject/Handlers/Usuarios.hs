@@ -18,8 +18,12 @@ getListUsuariosR = do
     usuario <- runDB $ selectList [] [Asc UsuariosNome]
     sendResponse (object [pack "resp" .= toJSON usuario])
     
-putUpdateUsuariosR :: Handler ()
-putUpdateUsuariosR = do
+putUpdateUsuariosR :: UsuariosId -> Handler ()
+putUpdateUsuariosR pid = do
     usuario <- requireJsonBody :: Handler Usuarios
-    uid <- runDB $ insert usuario
-    sendResponse (object [pack "resp" .= pack ("UPDATED " ++ (show $ fromSqlKey uid))])
+    runDB $ update pid [UsuariosNome    =. (usuariosNome usuario)
+                      , UsuariosRg      =. (usuariosRg usuario)
+                      , UsuariosSenha   =. (usuariosSenha usuario)
+                      , UsuariosEmail   =. (usuariosEmail usuario)
+                      , UsuariosTipo    =. (usuariosTipo usuario)]
+    sendResponse (object [pack "resp" .= pack "UPDATED"])

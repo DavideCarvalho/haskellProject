@@ -18,8 +18,10 @@ getListLocaisR = do
     locais <- runDB $ selectList [] [Asc LocaisNome]
     sendResponse (object [pack "resp" .= toJSON locais])
     
-putUpdateLocaisR :: Handler ()
-putUpdateLocaisR = do
+putUpdateLocaisR :: LocaisId -> Handler ()
+putUpdateLocaisR lid = do
     local <- requireJsonBody :: Handler Locais
-    lid <- runDB $ insert local
-    sendResponse (object [pack "resp" .= pack ("UPDATED " ++ (show $ fromSqlKey lid))])
+    runDB $ update lid [LocaisNome          =. (locaisNome local)
+                      , LocaisLocalizacao   =. (locaisLocalizacao local)
+                      , LocaisDescricao     =. (locaisDescricao local)]
+    sendResponse (object [pack "resp" .= pack "UPDATED"])

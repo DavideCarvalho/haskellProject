@@ -18,8 +18,8 @@ getListTiposUsuariosR = do
     tiposuario <- runDB $ selectList [] [Asc TiposUsuariosDescricao]
     sendResponse (object [pack "resp" .= toJSON tiposuario])
     
-putUpdateTiposUsuariosR :: Handler ()
-putUpdateTiposUsuariosR = do
-    tiposuario <- requireJsonBody :: Handler TiposUsuarios
-    uid <- runDB $ insert tiposuario
-    sendResponse (object [pack "resp" .= pack ("UPDATED " ++ (show $ fromSqlKey uid))])
+putUpdateTiposUsuariosR :: TiposUsuariosId -> Handler ()
+putUpdateTiposUsuariosR tid = do
+    tipo <- requireJsonBody :: Handler TiposUsuarios
+	runDB $ update tid [TiposUsuariosDescricao =. (tiposuariosDescricao tipo)]
+	sendResponse (object [pack "resp" .= pack "UPDATED"])
