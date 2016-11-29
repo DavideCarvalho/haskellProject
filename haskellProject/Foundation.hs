@@ -56,6 +56,7 @@ instance Yesod App where
     isAuthorized InsertUsuariosR _ = return Authorized
     isAuthorized _ _ = return Authorized
 
+-- DANDO AUTORIZACAO PARA ACESSO APENAS SE JA HOUVER UMA SESSION INICIADA ("_ID")
 estaAutenticado :: Handler AuthResult
 estaAutenticado = do
    msu <- lookupSession "_ID"
@@ -69,8 +70,3 @@ instance YesodPersist App where
        master <- getYesod
        let pool = connPool master
        runSqlPool f pool
-       
-type Form a = Html -> MForm Handler (FormResult a, Widget)
-
-instance RenderMessage App FormMessage where
-    renderMessage _ _ = defaultFormMessage

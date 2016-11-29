@@ -9,6 +9,8 @@
 /locais/cadastro                            InsertLocaisR             POST
 -- ROTA DE ATUALIZAÇÃO DE LOCAIS
 /locais/atualizacao/#LocaisId               UpdateLocaisR             PUT
+-- ROTA DE LISTAGEM DE PRODUTOS/LOCAL       
+/locais/produtos/#LocaisId                  ListLocaisProdutosR       GET
 
 -- ROTA DE LISTAGEM DE PRODUTOS
 /produtos/lista                             ListProdutosR             GET

@@ -7,10 +7,11 @@ import Yesod.Core
 import Data.Text
 import Database.Persist.Postgresql
 
+-- FUNCAO QUE VERIFICA 
 postLoginR :: Handler ()
 postLoginR = undefined
--- do usuario <- requireJsonBody :: Handler Usuarios pegar 'atributo' por 'atributo'
 
+-- FUNÇÃO QUE DESTROI A SESSÃO
 postLogoutR:: Handler ()
 postLogoutR = do
     deleteSession "_ID"

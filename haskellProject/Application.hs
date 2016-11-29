@@ -8,6 +8,7 @@ module Application where
 import Foundation
 import Yesod
 
+-- ADICIONANDO OS HANDLERS
 import Handlers.Usuarios
 import Handlers.Locais
 import Handlers.Produtos
